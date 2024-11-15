@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Styles/calculator.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="calculator">
+        <div id="process">
+            <input type="text" id="display" disabled>
+            <div class="result-content">
+                <div id="equalto">=</div>
+                <input type="text" id="result" disabled>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="own-design">
+                <div type="button" id="del">CE</div>
+                <button id="clear">C</button>
+                <button id="percentage">%</button>
+                <button id="operation">/</button>
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="operation" style="padding-top: 10px;">*</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="operation">&#45;</button>
+                <button id="1">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="operation">&#43;</button>
+                <button id="sum">&#177;</button>
+                <button id="0">0</button>
+                <button id="comma">&#44;</button>
+                <button id="operation">=</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        let display = document.querySelector('#display');
+        let results = document.querySelector('#result');
+        buttons = document.querySelectorAll('button');
+        let screenValue = "";
+        let del = document.querySelector('#del');
+        for(item of buttons){
+            item.addEventListener('click',(e)=>{
+                buttonText = e.target.innerText;
+                if(buttonText=="X"){
+                    buttonText='*';
+                    screenValue += buttonText;
+                    display.value = screenValue;
+                }else if(buttonText=="C"){
+                    screenValue="";
+                    display.value=screenValue;
+                    results.value="";
+                    $('#equalto').hide();
+                }else if(buttonText=="="){
+                    $('#equalto').show();
+                    var result;
+                    try{
+                        result = eval(screenValue);
+                    }catch(error){
+                        result='Expression error';
+                    }
+                    results.value=result;
+                }else{
+                    screenValue += buttonText;
+                    display.value = screenValue;
+                }
+            })
+        }
+        $('#del').click(function(){
+            $('#display').val($('#display').val().substring(0,$('#display').val().length - 1));
+        })
+
+
+        // var ownDesign = document.querySelector('.own-design');
+        // ownDesign.addEventListener('click', function(e){
+        //     if(e.target.localName == 'button') {
+        //         console.log(e.target.innerHTML);
+        //     }
+        // });
+    </script>  
+</body>
+</html>

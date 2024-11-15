@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik';
+    background-color: #807ECE;
+    font-weight: 400;
+}
+.calculator{
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: 566px;
+    width: 356px;
+    border-radius: 48px;
+    background: #2D2A37;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04), 0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26), 0px 8px 17px rgba(0, 0, 0, 0.29), inset 0px 6px 8px rgba(255, 255, 255, 0.1), inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+}
+#process{ 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    inset: 54px 54px auto 36px;
+}
+#display{
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-align: right;
+    color: #6B6B6B;
+}
+input{
+    all: unset;
+}
+.result-content{
+    display: flex;
+    justify-content: space-between;
+}
+#equalto{
+    display: none;
+    font-size: 36px;
+    color: #6B6B6B;
+}
+#result{
+    font-size: 36px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-align: right;
+    color: white;
+    width: 100%;
+}
+.buttons{
+    position: absolute;
+    inset: auto 32px 32px 32px;
+}
+.own-design{
+    display: grid;
+    grid-gap: 12px 12px;
+    grid-template: auto/ auto auto auto auto;
+}
+.own-design button, .own-design div{
+    height: 64px;
+    width: 64px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+}
+#del{
+    color: #975DFA;
+}
+#operation{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+}
+#operation:hover{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), #7F45E2;
+}
+
+table{
+    border-spacing: 12px;
+}
+td{
+    height: 64px;
+    width: 64px;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), #2D2A37;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+}
+td:hover{
+    transform: scale(1.1);
+    transform: translateY(4px);
+}
+tr:first-child td:first-child{
+    color: #975DFA;
+}
+td:last-of-type{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0.01%, rgba(255, 255, 255, 0.05) 100%), #462878;
+    box-shadow: 0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.1);
+}
